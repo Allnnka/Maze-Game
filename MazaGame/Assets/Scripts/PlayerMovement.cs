@@ -24,20 +24,44 @@ public class PlayerMovement : MonoBehaviour
     public Inventory inventory;
     public GameObject Hand;
     public HUD Hud;
-
+    private InventoryItemBase mCurrentItem = null;
     private void Start()
     {
         inventory.ItemUsed += Inventory_ItemUsed;
+        inventory.ItemRemoved += Inventory_ItemRemoved;
     }
+    private void SetItemActive(InventoryItemBase item, bool active)
+    {
+        GameObject currentItem = (item as MonoBehaviour).gameObject;
+        currentItem.SetActive(active);
+        currentItem.transform.parent = active ? Hand.transform : null;
+    }
+    private void Inventory_ItemRemoved(object sender, InventoryEventArgs e)
+    {
+        InventoryItemBase item = (InventoryItemBase)e.Item;
 
+        GameObject goItem = item.gameObject;
+        goItem.SetActive(true);
+        goItem.transform.parent = null;
+
+        if (item == mCurrentItem)
+            mCurrentItem = null;
+
+    }
     private void Inventory_ItemUsed(object sender, InventoryEventArgs e)
     {
-        IInventoryItem item = e.Item;
-        GameObject goItem=(item as MonoBehaviour).gameObject;
-        goItem.SetActive(true);
-        goItem.transform.parent = Hand.transform;
-        goItem.transform.position = Hand.transform.position;
+         // If the player carries an item, un-use it (remove from player's hand)
+            if (mCurrentItem != null)
+            {
+                SetItemActive(mCurrentItem, false);
+            }
 
+            InventoryItemBase item = (InventoryItemBase)e.Item;
+
+            // Use item (put it to hand of the player)
+            SetItemActive(item, true);
+
+            mCurrentItem = (InventoryItemBase)e.Item;
     }
 
     // Update is called once per frame

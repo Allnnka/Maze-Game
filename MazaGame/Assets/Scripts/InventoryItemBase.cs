@@ -22,6 +22,7 @@ public class InventoryItemBase : MonoBehaviour, IInventoryItem
 
     public virtual void OnPickUp()
     {
+        Destroy(gameObject.GetComponent<Rigidbody>());
         gameObject.SetActive(false);
     }
 
@@ -33,11 +34,26 @@ public class InventoryItemBase : MonoBehaviour, IInventoryItem
         {
             gameObject.SetActive(true);
             gameObject.transform.position = hit.point;
+            gameObject.transform.eulerAngles = DropRotation;
         }
     }
 
     public virtual void OnUse()
     {
-        
+        transform.localPosition = PickPosition;
+        transform.localEulerAngles = PickRotation;
     }
+    public virtual void OnPickup()
+    {
+        Destroy(gameObject.GetComponent<Rigidbody>());
+        gameObject.SetActive(false);
+
+    }
+    public Vector3 PickPosition;
+
+    public Vector3 PickRotation;
+
+    public Vector3 DropRotation;
+
+    public bool UseItemAfterPickup = false;
 }

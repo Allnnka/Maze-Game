@@ -36,16 +36,13 @@ public class HUD : MonoBehaviour
     private void InventoryScript_ItemAdded(object sender, InventoryEventArgs e)
     {
         Transform inventoryPanel = transform.Find("InventoryPanel");
-        Debug.Log("%%%%");
         foreach (Transform slot in inventoryPanel)
         {
             Transform imageTransform = slot.GetChild(0).GetChild(0);
             Image image = imageTransform.GetComponent<Image>();
             ItemDragHandler itemDragHandler = imageTransform.GetComponent<ItemDragHandler>();
-            Debug.Log("We in item add, image.enabled: "+image.enabled);
             if (!image.enabled)
             {
-                Debug.Log("!!!!!!");
                 image.enabled = true;
                 image.sprite = e.Item.Image;
                 itemDragHandler.Item = e.Item;

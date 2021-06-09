@@ -57,4 +57,10 @@ public class Gun : InventoryItemBase
            // Destroy(impactGO, 2f);
         }
     }
+    public override void OnUse()
+    {
+        transform.localPosition = PickPosition;
+        transform.localEulerAngles = PickRotation;
+        transform.Rotate(90,0,0);
+    }
 }
