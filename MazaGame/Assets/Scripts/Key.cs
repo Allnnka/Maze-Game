@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Key : InventoryItemBase
 {
-    public string Name
+    public override string Name
     {
         get
         {

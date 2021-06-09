@@ -84,8 +84,6 @@ public class PlayerMovement : MonoBehaviour
         if (item != null)
         {
             mItemToPickup = item;
-
-            
             Hud.OpenMessagePanel("");
         }
     }

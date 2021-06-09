@@ -15,12 +15,14 @@ public class Inventory : MonoBehaviour
 
     public void AddItem(IInventoryItem item)
     {
-
+        Debug.Log("Add");
         if(myItems.Count < SLOT)
         {
             Collider collider = (item as MonoBehaviour).GetComponent<Collider>();
-            if (!collider.enabled)
+            Debug.Log("colider.enabled:::"+collider.enabled);
+            if (collider.enabled)
             {
+                Debug.Log("colider.enabled");
                 collider.enabled = false;
                 myItems.Add(item);
                 item.OnPickUp();

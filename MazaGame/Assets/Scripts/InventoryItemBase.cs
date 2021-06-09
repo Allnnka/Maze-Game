@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InventoryItemBase : MonoBehaviour, IInventoryItem
 {
-    public string Name
+    public virtual string Name
     {
         get
         {
@@ -12,7 +12,7 @@ public class InventoryItemBase : MonoBehaviour, IInventoryItem
         }
     }
     public Sprite _Image;
-    public Sprite Image
+    public virtual Sprite Image
     {
         get
         {
