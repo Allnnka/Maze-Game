@@ -32,9 +32,13 @@ public class PlayerMovement : MonoBehaviour
     }
     private void SetItemActive(InventoryItemBase item, bool active)
     {
-        GameObject currentItem = (item as MonoBehaviour).gameObject;
-        currentItem.SetActive(active);
-        currentItem.transform.parent = active ? Hand.transform : null;
+        
+        if (item != null)
+        {
+            GameObject currentItem = (item as MonoBehaviour).gameObject;
+            currentItem.SetActive(active);
+            currentItem.transform.parent = active ? Hand.transform : null;
+        }
     }
     private void Inventory_ItemRemoved(object sender, InventoryEventArgs e)
     {
