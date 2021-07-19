@@ -9,12 +9,12 @@ public class HUD : MonoBehaviour
     public Inventory Inventory;
     public GameObject messagePanel;
 
-    void Start()
+    private void Awake()
     {
+        DontDestroyOnLoad(transform.gameObject);
         Inventory.ItemAdded += InventoryScript_ItemAdded;
         Inventory.ItemRemoved += Inventory_ItemRemoved;
     }
-
     private void Inventory_ItemRemoved(object sender, InventoryEventArgs e)
     {
         Transform inventoryPanel = transform.Find("InventoryPanel");

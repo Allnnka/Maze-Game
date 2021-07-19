@@ -15,8 +15,8 @@ public class KeyDoor : MonoBehaviour
             if (key.name == "Key")
             {
                 doorAnim.Play();
-                key.SetActive(false);
-                key.transform.parent = null;
+                //key.SetActive(false);
+                //key.transform.parent = null;
                 flag = true;
             }
         }
