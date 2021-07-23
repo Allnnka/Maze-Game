@@ -43,12 +43,6 @@ public class InventoryItemBase : MonoBehaviour, IInventoryItem
         transform.localPosition = PickPosition;
         transform.localEulerAngles = PickRotation;
     }
-    public virtual void OnPickup()
-    {
-        Destroy(gameObject.GetComponent<Rigidbody>());
-        gameObject.SetActive(false);
-
-    }
     public Vector3 PickPosition;
 
     public Vector3 PickRotation;

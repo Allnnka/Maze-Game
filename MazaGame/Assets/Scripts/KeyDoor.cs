@@ -5,7 +5,6 @@ using UnityEngine;
 public class KeyDoor : MonoBehaviour
 {
     public Animation doorAnim;
-    public Inventory Inventory;
     bool flag = false;
     private void OnTriggerEnter(Collider collider)
     {

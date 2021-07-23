@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
 using static UnityEngine.GraphicsBuffer;
 
 public class Gun : InventoryItemBase
@@ -12,25 +11,40 @@ public class Gun : InventoryItemBase
             return "Gun";
         }
     }
-
+    public override void OnUse()
+    {
+        transform.localPosition = PickPosition;
+        transform.localEulerAngles = PickRotation;
+        transform.Rotate(90, 0, 0);
+    }
     public float damage = 10f;
     public float range = 100f;
+
     public float impactForce = 30f;
     public float fireRate = 15f;
 
     public Camera fpsCam;
     public ParticleSystem muzzleFlash;
+    public Image gunPointer;
     //public GameObject impactEffect;
 
-    private float nestTimeToFire = 0f;
+    private float nextTimeToFire = 0f;
 
-    // Update is called once per frame
+    //Update is called once per frame
     void Update()
     {
-        if (Input.GetButton("Fire1") && Time.time >= nestTimeToFire)
+        if (transform.parent!=null)
         {
-            nestTimeToFire = Time.time + 1f / fireRate;
-            Shoot();
+            gunPointer.enabled = true;
+            if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
+            {
+                nextTimeToFire = Time.time + 1f / fireRate;
+                Shoot();
+            }
+        }
+        else
+        {
+            gunPointer.enabled = false;
         }
     }
 
@@ -54,13 +68,8 @@ public class Gun : InventoryItemBase
             }
 
             //GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
-           // Destroy(impactGO, 2f);
+            //Destroy(impactGO, 2f);
         }
     }
-    public override void OnUse()
-    {
-        transform.localPosition = PickPosition;
-        transform.localEulerAngles = PickRotation;
-        transform.Rotate(90,0,0);
-    }
+
 }
