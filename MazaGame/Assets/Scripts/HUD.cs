@@ -2,18 +2,43 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class HUD : MonoBehaviour
 {
     public Inventory Inventory;
     public GameObject messagePanel;
+    public Image deathMenu;
+    public Slider slider;
 
     private void Awake()
     {
         DontDestroyOnLoad(transform.gameObject);
         Inventory.ItemAdded += InventoryScript_ItemAdded;
         Inventory.ItemRemoved += Inventory_ItemRemoved;
+        deathMenu.gameObject.SetActive(false);
+    }
+    public void SetMaxHealth(int health)
+    {
+        slider.maxValue = health;
+        slider.value = health;
+    }
+
+    public void SetHealth(int health)
+    {
+        slider.value = health;
+    }
+    public void EnableDeathMenu()
+    {
+        deathMenu.gameObject.SetActive(true);
+    }
+    public void Restart()
+    {
+        deathMenu.gameObject.SetActive(false);
+        DontDestroyOnLoadManager.DestroyAll();
+        
+        SceneManager.LoadScene("Main", LoadSceneMode.Single);
     }
     private void Inventory_ItemRemoved(object sender, InventoryEventArgs e)
     {

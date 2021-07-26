@@ -25,14 +25,20 @@ public class PlayerMovement : MonoBehaviour
     public GameObject Hand;
     public HUD Hud;
     private InventoryItemBase mCurrentItem = null;
+
+
+    public int maxHealth = 100;
+    public int currentHealth;
+
     private void Start()
     {
         inventory.ItemUsed += Inventory_ItemUsed;
         inventory.ItemRemoved += Inventory_ItemRemoved;
+        currentHealth = maxHealth;
+        Hud.SetMaxHealth(maxHealth);
     }
     private void SetItemActive(InventoryItemBase item, bool active)
     {
-        
         if (item != null)
         {
             GameObject currentItem = (item as MonoBehaviour).gameObject;
@@ -103,7 +109,23 @@ public class PlayerMovement : MonoBehaviour
 
         controller.Move(velocity * Time.deltaTime);
 
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            TakeDamage(20);
+        }
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
     }
+
+    void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        Hud.SetHealth(currentHealth);
+    }
+
     private IInventoryItem mItemToPickup = null;  
     private void OnTriggerEnter(Collider other)
     {
@@ -125,5 +147,8 @@ public class PlayerMovement : MonoBehaviour
             mItemToPickup = null;
         }
     }
-
+    void Die()
+    {
+        Hud.EnableDeathMenu();
+    }
 }
