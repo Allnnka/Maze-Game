@@ -120,7 +120,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         currentHealth -= damage;
         Hud.SetHealth(currentHealth);
