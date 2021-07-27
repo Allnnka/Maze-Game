@@ -88,13 +88,12 @@ public class Enemy : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(transform.position, transform.forward, out hit))
             {
-                Debug.Log("BAMMM BAMMMM"+hit.transform.name);
                 if (hit.transform.name == "Player")
                 {
                     PlayerMovement target=hit.transform.GetComponent<PlayerMovement>();
                     if (target != null)
                     {
-                        target.TakeDamage(20);
+                        target.TakeDamage(10);
                     }
                 }
             }
