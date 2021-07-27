@@ -83,7 +83,7 @@ public class PlayerMovement : MonoBehaviour
             mItemToPickup.OnPickUp();
             Hud.CloseMessagePanel();
         }
-        if (mItemToPickup != null && Input.GetKeyDown(KeyCode.Q))
+        if (mItemToPickup != null && Input.GetKeyDown(KeyCode.G))
         {
             inventory.RemoveItem(mItemToPickup);
             mItemToPickup.OnDrop();
