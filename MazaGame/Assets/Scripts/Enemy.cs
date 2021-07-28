@@ -26,7 +26,8 @@ public class Enemy : MonoBehaviour
     public float sightRange, attackRange;
     public bool playerInSightRange, playerInAttackRange;
 
-
+    public AudioSource attackMusic;
+    public AudioSource dieMusic;
     private void Start()
     {
         player = PlayerManager.instance.player.transform;// GameObject.FindGameObjectWithTag("Player").transform;
@@ -81,6 +82,7 @@ public class Enemy : MonoBehaviour
 
         if (!alreadyAttacked)
         {
+            attackMusic.Play();
             ///Attack code here
             Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
             rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
@@ -112,7 +114,8 @@ public class Enemy : MonoBehaviour
 
     private void DestroyEnemy()
     {
-        Destroy(gameObject);
+        dieMusic.Play();
+        Destroy(gameObject,1);
     }
 
     private void OnDrawGizmosSelected()

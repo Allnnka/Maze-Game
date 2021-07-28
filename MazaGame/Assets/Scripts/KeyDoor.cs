@@ -8,17 +8,19 @@ public class KeyDoor : MonoBehaviour
     bool flag = false;
     private void OnTriggerEnter(Collider collider)
     {
-        if (collider.gameObject.transform.GetChild(1).GetChild(0).childCount != 0 && !flag)
+        if (collider.gameObject.name == "Player")
         {
-            GameObject key = collider.gameObject.transform.GetChild(1).GetChild(0).GetChild(0).gameObject;
-            if (key.name == "Key")
+            if (collider.gameObject.transform.GetChild(1).GetChild(0).childCount != 0 && !flag)
             {
-                doorAnim.Play();
-                //key.SetActive(false);
-                //key.transform.parent = null;
-                flag = true;
+                GameObject key = collider.gameObject.transform.GetChild(1).GetChild(0).GetChild(0).gameObject;
+                if (key.name == "Key")
+                {
+                    doorAnim.Play();
+                    //key.SetActive(false);
+                    //key.transform.parent = null;
+                    flag = true;
+                }
             }
         }
-        
     }
 }
