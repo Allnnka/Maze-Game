@@ -38,6 +38,7 @@ public class Inventory : MonoBehaviour
         {
             ItemUsed(this, new InventoryEventArgs(item));
         }
+
     }
 
     public void RemoveItem(IInventoryItem item)

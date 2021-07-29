@@ -42,8 +42,18 @@ public class PlayerMovement : MonoBehaviour
         if (item != null)
         {
             GameObject currentItem = (item as MonoBehaviour).gameObject;
-            currentItem.SetActive(active);
-            currentItem.transform.parent = active ? Hand.transform : null;
+            if (item.Name == "HealthBottle")
+            {
+                inventory.RemoveItem(item);
+                item.OnDrop();
+                HealthRecovery(20);
+            }
+            else
+            {
+                currentItem.SetActive(active);
+                currentItem.transform.parent = active ? Hand.transform : null;
+            }
+           
         }
     }
     private void Inventory_ItemRemoved(object sender, InventoryEventArgs e)
@@ -89,7 +99,6 @@ public class PlayerMovement : MonoBehaviour
             mItemToPickup.OnDrop();
         }
 
-
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if (isGrounded && velocity.y < 0)
@@ -120,7 +129,11 @@ public class PlayerMovement : MonoBehaviour
         currentHealth -= damage;
         Hud.SetHealth(currentHealth);
     }
-
+    public void HealthRecovery(int recovery)
+    {
+        currentHealth += recovery;
+        Hud.SetHealth(currentHealth);
+    }
     private IInventoryItem mItemToPickup = null;  
     private void OnTriggerEnter(Collider other)
     {
@@ -144,6 +157,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void Die()
     {
+        AudioListener.pause = true;
         Hud.EnableDeathMenu();
     }
 }

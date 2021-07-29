@@ -37,8 +37,12 @@ public class HUD : MonoBehaviour
     {
         deathMenu.gameObject.SetActive(false);
         DontDestroyOnLoadManager.DestroyAll();
-        
+        AudioListener.pause = false;
         SceneManager.LoadScene("Main", LoadSceneMode.Single);
+    }
+    public void QuitGame()
+    {
+        Application.Quit();
     }
     private void Inventory_ItemRemoved(object sender, InventoryEventArgs e)
     {
@@ -81,6 +85,7 @@ public class HUD : MonoBehaviour
         Debug.Log("We in open message");
         messagePanel.SetActive(true);
     }
+   
     public void CloseMessagePanel()
     {
         messagePanel.SetActive(false);
