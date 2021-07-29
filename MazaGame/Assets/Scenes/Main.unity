@@ -3081,7 +3081,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &606066239
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3591,11 +3591,6 @@ Transform:
   - {fileID: 659448798}
   - {fileID: 520375517}
   - {fileID: 180049446}
-  - {fileID: 2128263336}
-  - {fileID: 1016046960}
-  - {fileID: 1595661974}
-  - {fileID: 752975053}
-  - {fileID: 1580872352}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3609,6 +3604,7 @@ GameObject:
   m_Component:
   - component: {fileID: 705507995}
   - component: {fileID: 705507994}
+  - component: {fileID: 705507996}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -3628,7 +3624,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Intensity: 1.3
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -3685,12 +3681,24 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 1.969, y: 3, z: 0}
+  m_LocalPosition: {x: 1.969, y: 7.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &705507996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705507993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3c5e21f84df1dc4e9c5351d6b373e58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &711345577 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4789224285325908, guid: 3b703535d10b66844a909b8cd4b12fc5,
@@ -8887,6 +8895,7 @@ GameObject:
   - component: {fileID: 752975056}
   - component: {fileID: 752975055}
   - component: {fileID: 752975054}
+  - component: {fileID: 752975058}
   m_Layer: 0
   m_Name: HealthBottle (3)
   m_TagString: Untagged
@@ -8902,11 +8911,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 752975052}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 172.03, y: 159.60257, z: 8.823641}
+  m_LocalPosition: {x: -49.138306, y: 1.8999939, z: -31.03}
   m_LocalScale: {x: 0.82, y: 0.6867, z: 0.73654}
   m_Children: []
-  m_Father: {fileID: 697853676}
-  m_RootOrder: 118
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &752975054
 BoxCollider:
@@ -8985,6 +8994,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 752975052}
   m_Mesh: {fileID: 4300000, guid: c7764da22a5c85f448a422fe9a9576f8, type: 3}
+--- !u!114 &752975058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752975052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3c5e21f84df1dc4e9c5351d6b373e58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &781982117
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9180,7 +9201,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &792988453 stripped
 Transform:
@@ -10271,7 +10292,7 @@ Transform:
   - {fileID: 1613763867}
   - {fileID: 1661752136}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &975867462 stripped
 Transform:
@@ -10520,6 +10541,7 @@ GameObject:
   - component: {fileID: 1016046963}
   - component: {fileID: 1016046962}
   - component: {fileID: 1016046961}
+  - component: {fileID: 1016046965}
   m_Layer: 0
   m_Name: HealthBottle (1)
   m_TagString: Untagged
@@ -10534,12 +10556,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1016046959}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 253.89, y: 157.9, z: 52.32}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 32.721695, y: 0.19741821, z: 12.466358}
   m_LocalScale: {x: 0.82, y: 0.6867, z: 0.73654}
   m_Children: []
-  m_Father: {fileID: 697853676}
-  m_RootOrder: 116
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1016046961
 BoxCollider:
@@ -10618,6 +10640,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1016046959}
   m_Mesh: {fileID: 4300000, guid: c7764da22a5c85f448a422fe9a9576f8, type: 3}
+--- !u!114 &1016046965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1016046959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3c5e21f84df1dc4e9c5351d6b373e58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1019830238
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17174,7 +17208,7 @@ Transform:
   m_Children:
   - {fileID: 2008571820}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 3.9020002, y: 89.997, z: 84.50001}
 --- !u!1001 &1223552926
 PrefabInstance:
@@ -18854,6 +18888,7 @@ GameObject:
   - component: {fileID: 1580872355}
   - component: {fileID: 1580872354}
   - component: {fileID: 1580872353}
+  - component: {fileID: 1580872357}
   m_Layer: 0
   m_Name: HealthBottle (4)
   m_TagString: Untagged
@@ -18868,12 +18903,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1580872351}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 192.68, y: 157.7, z: 24.51}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -28.488312, y: -0.0025787354, z: -15.343641}
   m_LocalScale: {x: 0.82, y: 0.6867, z: 0.73654}
   m_Children: []
-  m_Father: {fileID: 697853676}
-  m_RootOrder: 119
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1580872353
 BoxCollider:
@@ -18952,6 +18987,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1580872351}
   m_Mesh: {fileID: 4300000, guid: c7764da22a5c85f448a422fe9a9576f8, type: 3}
+--- !u!114 &1580872357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1580872351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3c5e21f84df1dc4e9c5351d6b373e58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1595661973
 GameObject:
   m_ObjectHideFlags: 0
@@ -18965,6 +19012,7 @@ GameObject:
   - component: {fileID: 1595661977}
   - component: {fileID: 1595661976}
   - component: {fileID: 1595661975}
+  - component: {fileID: 1595661979}
   m_Layer: 0
   m_Name: HealthBottle (2)
   m_TagString: Untagged
@@ -18979,12 +19027,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1595661973}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 185.94, y: 158.94, z: 42.08}
-  m_LocalScale: {x: 0.82, y: 0.6867, z: 0.73654}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -35.228302, y: 1.2374268, z: 2.2263603}
+  m_LocalScale: {x: 0.82, y: 0.6867001, z: 0.73654014}
   m_Children: []
-  m_Father: {fileID: 697853676}
-  m_RootOrder: 117
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!65 &1595661975
 BoxCollider:
@@ -19063,6 +19111,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1595661973}
   m_Mesh: {fileID: 4300000, guid: c7764da22a5c85f448a422fe9a9576f8, type: 3}
+--- !u!114 &1595661979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1595661973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3c5e21f84df1dc4e9c5351d6b373e58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1603655006
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19509,7 +19569,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1650449719
 GameObject:
@@ -27464,7 +27524,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2095684637 stripped
 Transform:
@@ -27563,6 +27623,7 @@ GameObject:
   - component: {fileID: 2128263339}
   - component: {fileID: 2128263338}
   - component: {fileID: 2128263337}
+  - component: {fileID: 2128263341}
   m_Layer: 0
   m_Name: HealthBottle
   m_TagString: Untagged
@@ -27577,12 +27638,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2128263335}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 263.72, y: 157.9, z: 8.823641}
-  m_LocalScale: {x: 0.82, y: 0.6867, z: 0.73654}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 42.551697, y: 0.19741821, z: -31.03}
+  m_LocalScale: {x: 0.82, y: 0.6867001, z: 0.73654014}
   m_Children: []
-  m_Father: {fileID: 697853676}
-  m_RootOrder: 115
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!65 &2128263337
 BoxCollider:
@@ -27661,6 +27722,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2128263335}
   m_Mesh: {fileID: 4300000, guid: c7764da22a5c85f448a422fe9a9576f8, type: 3}
+--- !u!114 &2128263341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128263335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3c5e21f84df1dc4e9c5351d6b373e58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2129016345
 GameObject:
   m_ObjectHideFlags: 0
@@ -28020,6 +28093,7 @@ GameObject:
   - component: {fileID: 23006397190675510}
   - component: {fileID: 1329209131594347}
   - component: {fileID: 1329209131594348}
+  - component: {fileID: 1329209131594349}
   m_Layer: 0
   m_Name: HealthBottle
   m_TagString: Untagged
@@ -28057,6 +28131,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.86, y: 1.279785, z: 1.47}
   m_Center: {x: -0.020451546, y: 0.6167874, z: 0.0049738884}
+--- !u!114 &1329209131594349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329209131594346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3c5e21f84df1dc4e9c5351d6b373e58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1428155679264742
 GameObject:
   m_ObjectHideFlags: 0
@@ -28274,7 +28360,7 @@ Transform:
   m_LocalScale: {x: 0.82, y: 0.6867, z: 0.73654}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4099705072895351
 Transform:

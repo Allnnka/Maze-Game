@@ -8,7 +8,6 @@ public class OpenDoorInMaze : MonoBehaviour
     bool flagDoor = false;
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("WE hereeee");
         if (other.gameObject.name == "Player" && !flagDoor)
         {
             doorAnim.Play("DoorAnimMaze");

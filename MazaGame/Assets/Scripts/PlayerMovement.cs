@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-
-
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -122,6 +121,10 @@ public class PlayerMovement : MonoBehaviour
         {
             Die();
         }
+        if (gameObject.transform.position.y <= -2)
+        {
+            Die();
+        }
     }
 
     public void TakeDamage(int damage)
@@ -157,7 +160,11 @@ public class PlayerMovement : MonoBehaviour
     }
     void Die()
     {
-        AudioListener.pause = true;
-        Hud.EnableDeathMenu();
+        if (SceneManager.GetActiveScene().name != "EndGame")
+        {
+            AudioListener.pause = true;
+            Hud.EnableDeathMenu();
+        }
+        
     }
 }

@@ -14,9 +14,12 @@ public class HUD : MonoBehaviour
 
     private void Awake()
     {
-        DontDestroyOnLoad(transform.gameObject);
-        Inventory.ItemAdded += InventoryScript_ItemAdded;
-        Inventory.ItemRemoved += Inventory_ItemRemoved;
+        if (SceneManager.GetActiveScene().name != "EndGame")
+        {
+            DontDestroyOnLoad(transform.gameObject);
+            Inventory.ItemAdded += InventoryScript_ItemAdded;
+            Inventory.ItemRemoved += Inventory_ItemRemoved;
+        }
         deathMenu.gameObject.SetActive(false);
     }
     public void SetMaxHealth(int health)
