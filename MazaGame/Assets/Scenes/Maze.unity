@@ -4191,7 +4191,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1.2
+  m_Intensity: 1.3
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -8702,7 +8702,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1282996744}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 65.98, y: 1.28, z: -43.03}
+  m_LocalPosition: {x: 67.69, y: 1.16, z: -43.03}
   m_LocalScale: {x: 0.82, y: 0.6867, z: 0.73653996}
   m_Children: []
   m_Father: {fileID: 0}
